@@ -1,0 +1,36 @@
+Cleaning Done:
+
+1) Removed all empty lines with value "\t\t\t" present in between ssf lines of sentecnes in form of "SerialNo\t\t\t".
+
+2) For untagged words (Empty POS Tag value) added "UNTAG" as the POS Tag value. Removed those sentences with UNTAG values from test and train files and added them to dev file.
+
+3) Added missing SSF end marker "))" and missing chunk markers "((" and "))" in some sentences.
+
+4) Added missing start and end sentence markers in some sentences.
+
+5) Removed "</Story>" and "<Story id="">" tags.
+
+6) Corrected "<Sentence id ="idnumber">" to "<Sentence id="idnumber">".
+
+7) Removed empty sentecnes of format similar to this:
+
+<Sentence id="">
+0	((	SSF	
+	))
+</Sentence>
+
+8) Corrected those lines where word and POS tag were merged together.
+
+9) Changed tags of type "tag?" to "tag" in POS and chunk tags.
+
+10) Changed tags of type "tag:?" to "tag" in POS and chunk tags.
+
+11) Separated untagged sentences mixed together and added  "sentence", "SSF" markers and "UNTAG" as POS tag for words and kept them in dev file.
+
+12) Removed extra spaces present in front of words before tab.
+
+13) Inserted missing chunk markers with tag "UNTAG".
+
+14) Removed empty sentences of format similar to this (using himanshu's API and printed new new SSF sentecnes for train ans test dir):
+<Sentence id="">
+</Sentence>
